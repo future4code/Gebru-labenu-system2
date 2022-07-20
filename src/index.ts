@@ -1,4 +1,4 @@
 import app from "./app"
-import { createClass } from "./endpoints/class/createClass"
+import { createClass } from "./endpoints/turma/createClass"
 
 app.post("/class", createClass)

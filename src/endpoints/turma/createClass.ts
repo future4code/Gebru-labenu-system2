@@ -1,8 +1,8 @@
 import { Request, Response } from "express"
-import { connection } from "../../data/connection"
-import { Turma } from "../../types/class"
+import { connection } from "../../connection"
+import {Turma} from "../../types/class"
 
-export const createClass = async (req: Request, res: Response): Promise<void> => {
+export const criarTurma = async (req: Request, res: Response): Promise<void> => {
   let codigoErro = 400
   try {
     const turma = new Turma(req.body.nome)

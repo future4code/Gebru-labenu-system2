@@ -1,13 +1,13 @@
 export class Turma {
-  private id: number
+  private id: string = Math.floor(Date.now() * Math.random()).toString(36)
   private nome: string
-  private modulo: number
+  private modulo: string = "0"
 
   constructor (nome: string){
     this.nome = nome
   }
 
-  getId(): number {
+  getId(): string {
     return this.id
   }
 
@@ -15,7 +15,7 @@ export class Turma {
     return this.nome
   }
 
-  getModulo(): number {
+  getModulo(): string {
     return this.modulo
   }
 }
