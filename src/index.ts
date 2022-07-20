@@ -1,4 +1,17 @@
 import app from "./app"
-import { createClass } from "./endpoints/turma/createClass"
+import { buscarTurmaAtiva } from "./endpoints/turma/buscarTurmaAtiva"
+import { criarTurma } from "./endpoints/turma/criarTurma"
+import { mudarTurmaDeModulo } from "./endpoints/turma/mudarTurmaDeModulo"
 
-app.post("/class", createClass)
+
+//Localizar
+app.get("/turma", buscarTurmaAtiva)
+
+
+//Criar
+app.post("/turma/criar", criarTurma)
+
+
+//Update
+app.put("/turma/editar", mudarTurmaDeModulo)
+

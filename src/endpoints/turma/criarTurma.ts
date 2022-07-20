@@ -1,14 +1,14 @@
 import { Request, Response } from "express"
 import { connection } from "../../connection"
-import {Turma} from "../../types/class"
+import { Turma } from "../../entidades/class"
 
 export const criarTurma = async (req: Request, res: Response): Promise<void> => {
-  let codigoErro = 400
+  let errorCode = 400
   try {
     const turma = new Turma(req.body.nome)
 
     if (!req.body.nome) {
-      codigoErro = 422
+      errorCode = 422
       throw new Error("Informe um nome para a turma")
     }
 
@@ -22,6 +22,6 @@ export const criarTurma = async (req: Request, res: Response): Promise<void> => 
     res.status(200).send("Turma criada")
 
   } catch (error: any) {
-    res.status(codigoErro).send(error.message || error.sqlMessage)
+    res.status(errorCode).send(error.message || error.sqlMessage)
   }
 }
