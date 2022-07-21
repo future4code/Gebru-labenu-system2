@@ -1,3 +1,22 @@
-GET http://localhost:3003/turma Content-Type: application/json
+GET http://localhost:3003/turma 
+
+###
+
+POST http://localhost:3003/turma/criar 
+Content-Type: application/json
+
+{
+ "nome":"Pokemon" 
+}
+
+###
+
+PUT http://localhost:3003/turma/editar 
+Content-Type: application/json
+
+{
+    "id": "9zqohjuw",
+    "modulo": "1"
+}
 
 ###

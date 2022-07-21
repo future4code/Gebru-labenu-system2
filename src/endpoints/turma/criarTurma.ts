@@ -12,7 +12,7 @@ export const criarTurma = async (req: Request, res: Response): Promise<void> => 
       throw new Error("Informe um nome para a turma")
     }
 
-    const novaTurma = await connection("turma")
+    const novaTurma = await connection("TURMA")
       .insert({
         id: turma.getId(),
         nome: turma.getNome(),
