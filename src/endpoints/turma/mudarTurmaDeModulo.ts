@@ -28,7 +28,7 @@ export const mudarTurmaDeModulo = async (req: Request, res: Response): Promise<v
       throw new Error("Informe um módulo válido")
     }
 
-    const mudarTurma = await connection("turma")
+    const mudarTurma = await connection("TURMA")
       .where("id", id)
       .update({ modulo })
 
