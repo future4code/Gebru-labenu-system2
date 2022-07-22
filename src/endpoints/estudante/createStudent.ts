@@ -2,23 +2,27 @@ import {Request, Response} from "express";
 import { connection } from "../../connection";
 import { StudentClass } from "../../entidades/StudentClass";
 
-export default async function createStudent (req:Request, res:Response):Promise<void>{
+export const createStudent = async (req:Request, res:Response):Promise<void>=>{
+  let errorCode = 400
     try{
-        const {nome, email, data_nasc, turma_id} = req.body
-        
-      if (!nome || !email || !data_nasc || !turma_id) {
-        res.statusCode = 422
-        throw "'name', 'nickname', 'email' e 'address' são obrigatórios"
-    }
-    const id: string = Date.now().toString()
-    const newStudent = new StudentClass(id,nome, email,data_nasc, turma_id)
+      const id = Math.floor(Date.now() * Math.random()).toString(10)
+      const aluno = new StudentClass(id,req.body.nome, req.body.data_nasc, req.body.email, req.body.turma_id)
 
-    await connection("Estudante").insert(newStudent)
-    .insert({
-        
+      if(!aluno){
+        errorCode= 422
+       throw new Error("Insira os dados solicitados corretamente") 
+      }
+      const novoEstudante = await connection("ESTUDANTE")
+      .insert({
+        id: aluno.getId(),
+        nome: aluno.getNome(),
+        data_nasc: aluno.getdataNasc(),
+        email: aluno.getEmail(),
+        turma_id: aluno.getTurmaId()
       })
-    res.status(201).send("Estudante criado!")
 
+    res.status(201).send("Turma criada")
+        
 
     }catch(error:any){
         console.log(error.sqlMessage || error.message);

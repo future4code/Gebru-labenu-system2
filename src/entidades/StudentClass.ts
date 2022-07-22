@@ -1,5 +1,5 @@
 export class StudentClass {
-   private id: string = Math.floor(Date.now() * Math.random()).toString(36)
+   private id: string = Math.floor(Date.now() * Math.random()).toString(10)
    private nome: string
    private data_nasc: number
    private email: string
@@ -12,6 +12,7 @@ export class StudentClass {
         this.email = email
         this.turma_id = address
     }
+    
  
  getId():string{
    return this.id
