@@ -1,5 +1,5 @@
 import app from "./app"
-import createStudent from "./endpoints/estudante/createStudent"
+import {createStudent} from "./endpoints/estudante/createStudent"
 import { buscarTurmaAtiva } from "./endpoints/turma/buscarTurmaAtiva"
 import { criarTurma } from "./endpoints/turma/criarTurma"
 import { mudarTurmaDeModulo } from "./endpoints/turma/mudarTurmaDeModulo"
