@@ -3,6 +3,9 @@ import {createStudent} from "./endpoints/estudante/createStudent"
 import { buscarTurmaAtiva } from "./endpoints/turma/buscarTurmaAtiva"
 import { criarTurma } from "./endpoints/turma/criarTurma"
 import { mudarTurmaDeModulo } from "./endpoints/turma/mudarTurmaDeModulo"
+// import {buscarDocentes} from "./endpoints/docentes/buscarDocentes"
+import {criarDocente} from "./endpoints/docentes/criarDocente"
+// import {mudarDocentes} from "./endpoints/docentes/mudarDocente"
 
 
 //Localizar
@@ -23,3 +26,14 @@ app.put("/turma/editar", mudarTurmaDeModulo)
 
 //Criar estudante
 app.post("/estudante/criar", createStudent)
+
+// Criar Docentes
+app.post ("/docente/criar", criarDocente)
+
+//Localizar docentes
+
+// app.get ("/docente/buscar", buscarDocentes)
+
+// Uppdate - Mudar docente de turma  
+
+// app.put("/docente/mudar de turma", mudarDocentes )
