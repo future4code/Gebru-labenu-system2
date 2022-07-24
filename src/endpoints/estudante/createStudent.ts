@@ -5,10 +5,15 @@ import { StudentClass } from "../../entidades/StudentClass";
 export const createStudent = async (req:Request, res:Response):Promise<void>=>{
   let errorCode = 400
     try{
-      const id = Math.floor(Date.now() * Math.random()).toString(10)
-      const aluno = new StudentClass(id,req.body.nome, req.body.data_nasc, req.body.email, req.body.turma_id)
+      
+      let nome = req.body.nome;
+      let data_nasc = req.body.data_nasc;
+      let email = req.body.email;
+      let turma_id = req.body.turma_id;
 
-      if(!aluno){
+      const aluno: StudentClass = new StudentClass(nome, data_nasc, email, turma_id)
+      
+      if(!nome || !data_nasc || !email || !turma_id){
         errorCode= 422
        throw new Error("Insira os dados solicitados corretamente") 
       }
@@ -21,7 +26,7 @@ export const createStudent = async (req:Request, res:Response):Promise<void>=>{
         turma_id: aluno.getTurmaId()
       })
 
-    res.status(201).send("Turma criada")
+    res.status(201).send("Estudante adicionado")
         
 
     }catch(error:any){

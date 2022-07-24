@@ -1,16 +1,16 @@
 export class StudentClass {
-   private id: string = Math.floor(Date.now() * Math.random()).toString(10)
+   private id: string = Math.floor(Date.now() * Math.random()).toString(36)
    private nome: string
-   private data_nasc: number
+   private data_nasc: Date
    private email: string
    private turma_id: string
 
-    constructor(id:string, name:string, birth:number, email:string, address:string){
-        this.id = id
-        this.nome = name
-        this.data_nasc = birth
+    constructor(nome:string, data_nasc:Date, email:string, turma_id:string){
+        
+        this.nome = nome
+        this.data_nasc = data_nasc
         this.email = email
-        this.turma_id = address
+        this.turma_id = turma_id
     }
     
  
@@ -20,13 +20,13 @@ export class StudentClass {
  getNome():string {
     return this.nome
  }
- getdataNasc():number{
+ getdataNasc():Date{
     return this.data_nasc
  }
  getEmail():string{
     return this.email
  }
- getTurmaId(){
+ getTurmaId():string{
     return this.turma_id
  }
 }

@@ -1,5 +1,7 @@
 import app from "./app"
 import {createStudent} from "./endpoints/estudante/createStudent"
+import { changeStudentClass } from "./endpoints/estudante/changeStudentClass"
+import { getStudent } from "./endpoints/estudante/getStudent"
 import { buscarTurmaAtiva } from "./endpoints/turma/buscarTurmaAtiva"
 import { criarTurma } from "./endpoints/turma/criarTurma"
 import { mudarTurmaDeModulo } from "./endpoints/turma/mudarTurmaDeModulo"
@@ -21,11 +23,15 @@ app.put("/turma/editar", mudarTurmaDeModulo)
 
 
 //Pegar estudante pelo nome
-// app.get("/estudante/:nome", getStudent)
+app.get("/estudante", getStudent)
 
 
 //Criar estudante
 app.post("/estudante/criar", createStudent)
+
+
+//Mudar estudante de turma
+app.patch("/estudante", changeStudentClass)
 
 // Criar Docentes
 app.post ("/docente/criar", criarDocente)
@@ -37,3 +43,4 @@ app.post ("/docente/criar", criarDocente)
 // Uppdate - Mudar docente de turma  
 
 // app.put("/docente/mudar de turma", mudarDocentes )
+
