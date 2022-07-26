@@ -30,3 +30,18 @@ Content-Type: application/json
     "turma_id": "9zqohjuw"
 
 }
+
+###
+GET  http://localhost:3003/docente/buscar 
+
+
+###
+ 
+PUT  http://localhost:3003/docente/mudar-de-turma 
+Content-Type: application/json
+
+
+{
+    "id":""
+    "turma_id": "9zqohjuw"
+}

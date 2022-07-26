@@ -24,7 +24,7 @@ export const mudarDocentes = async (
       throw new Error("Verifique os dados informados");
     }
 
-    const mudaTurma = await connection("docente")
+    const mudaTurma = await connection("DOCENTE")
       .where("id", id)
       .update({ turma_id: turmaId });
 

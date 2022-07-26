@@ -12,7 +12,7 @@ export const criarDocente = async (
       req.body.nome,
       req.body.dataNasc,
       req.body.email,
-      req.body.turma_id
+      ""
     );
     console.log(docente)
 
@@ -21,8 +21,8 @@ export const criarDocente = async (
     if (
       !req.body.nome ||
       !req.body.email ||
-      !req.body.dataNasc ||
-      !req.body.turma_id
+      !req.body.dataNasc 
+      
     ) {
       errorCode = 422;
       throw new Error("Preencha os campos corretamente");
