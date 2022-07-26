@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { selecionarDocentes } from "../../dados/docentes/selecionarDocentes";
 import { selecionarEspecialidade } from "../../dados/docentes/selecionarEspecialidade";
 
-export const pegarDocentes = async (
+export const buscarDocentes = async (
   req: Request,
   res: Response
 ): Promise<void> => {

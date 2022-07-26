@@ -3,7 +3,7 @@ import { connection } from "../../connection";
 import { selecionarDocentes } from "../../dados/docentes/selecionarDocentes";
 import { selecionarTurma } from "../../dados/turma/selecionarTurma";
 
-export const mudarTurmaDocente = async (
+export const mudarDocentes = async (
   req: Request,
   res: Response
 ): Promise<void> => {
