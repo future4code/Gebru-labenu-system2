@@ -20,10 +20,28 @@ Content-Type: application/json
 }
 
 ###
-POST https://localhost:3003/docente/criar 
+POST http://localhost:3003/docente/criar 
 Content-Type: application/json
 
 {
-"nome":"Kakau"
+    "nome":"kakau",
+    "email": "kakau2@gmail.com",
+    "dataNasc":"08/03/1985",
+    "turma_id": "9zqohjuw"
 
+}
+
+###
+GET  http://localhost:3003/docente/buscar 
+
+
+###
+ 
+PUT  http://localhost:3003/docente/mudar-de-turma 
+Content-Type: application/json
+
+
+{
+    "id":""
+    "turma_id": "9zqohjuw"
 }

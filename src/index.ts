@@ -5,9 +5,9 @@ import { getStudent } from "./endpoints/estudante/getStudent"
 import { buscarTurmaAtiva } from "./endpoints/turma/buscarTurmaAtiva"
 import { criarTurma } from "./endpoints/turma/criarTurma"
 import { mudarTurmaDeModulo } from "./endpoints/turma/mudarTurmaDeModulo"
-// import {buscarDocentes} from "./endpoints/docentes/buscarDocentes"
+import {buscarDocentes} from "./endpoints/docentes/buscarDocentes"
 import {criarDocente} from "./endpoints/docentes/criarDocente"
-// import {mudarDocentes} from "./endpoints/docentes/mudarDocente"
+import {mudarDocentes} from "./endpoints/docentes/mudarDocentes"
 
 
 //Localizar
@@ -34,13 +34,19 @@ app.post("/estudante/criar", createStudent)
 app.patch("/estudante", changeStudentClass)
 
 // Criar Docentes
-app.post ("/docente/criar", criarDocente)
+app.post("/docente/criar", criarDocente)
 
 //Localizar docentes
 
-// app.get ("/docente/buscar", buscarDocentes)
+app.get ("/docente/buscar", buscarDocentes)
 
-// Uppdate - Mudar docente de turma  
+// // Uppdate - Mudar docente de turma  
 
-// app.put("/docente/mudar de turma", mudarDocentes )
+app.put("/docente/mudar-de-turma", mudarDocentes )
+
+
+
+
+
+
 

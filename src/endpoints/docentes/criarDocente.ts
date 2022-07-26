@@ -10,18 +10,19 @@ export const criarDocente = async (
   try {
     const docente = new Docentes(
       req.body.nome,
-      req.body.email,
       req.body.dataNasc,
-      req.body.turma_id
+      req.body.email,
+      ""
     );
+    console.log(docente)
 
     const id = Math.floor(Date.now() * Math.random()).toString(36);
 
     if (
       !req.body.nome ||
       !req.body.email ||
-      !req.body.dataNasc ||
-      !req.body.turma_id
+      !req.body.dataNasc 
+      
     ) {
       errorCode = 422;
       throw new Error("Preencha os campos corretamente");
@@ -32,7 +33,7 @@ export const criarDocente = async (
       throw new Error("Informe uma data de nascimento válida");
     }
 
-    const novoDocente = await connection("docente").insert({
+    const novoDocente = await connection("DOCENTE").insert({
       id: docente.getId(),
       nome: docente.getNome(),
       email: docente.getEmail(),
@@ -40,21 +41,21 @@ export const criarDocente = async (
       turma_id: docente.getTurmaId(),
     });
 
-    const especialidades = req.body.especialidades;
-    for (let esp of especialidades) {
-      const idRelacao = Math.random().toString;
+    // const especialidades = req.body.especialidades;
+    // for (let esp of especialidades) {
+    //   const idRelacao = Math.random().toString;
 
-      const idEspecialidade = Math.random().toString();
-      await connection("ESPECIALIDADE").insert({
-        id: idEspecialidade,
-        nome: esp,
-      });
-      await connection("docente_especialidade").insert({
-        id: idRelacao,
-        docente_id: docente.getId(),
-        especialidade_id: idEspecialidade,
-      });
-    }
+    //   const idEspecialidade = Math.random().toString();
+    //   await connection("ESPECIALIDADE").insert({
+    //     id: idEspecialidade,
+    //     nome: esp,
+    //   });
+    //   await connection("docente_especialidade").insert({
+    //     id: idRelacao,
+    //     docente_id: docente.getId(),
+    //     especialidade_id: idEspecialidade,
+    //   });
+    // }
 
     res.status(201).send("Docente cadastrado");
   } catch (error: any) {
