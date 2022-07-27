@@ -5,6 +5,9 @@ Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, h
 ### Link Heroku:
 https://gebru-labenu-system-2.herokuapp.com/
 
+### Link Postman
+https://documenter.getpostman.com/view/19719459/UzXNTGvt
+
 Ele deve possuir, ao menos, as 3 entidades importantes:
 
 1. Estudantes 
