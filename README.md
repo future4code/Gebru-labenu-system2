@@ -2,6 +2,12 @@
 
 Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
 
+### Link Heroku:
+https://gebru-labenu-system-2.herokuapp.com/
+
+### Link Postman
+https://documenter.getpostman.com/view/19719459/UzXNTGvt
+
 Ele deve possuir, ao menos, as 3 entidades importantes:
 
 1. Estudantes 
